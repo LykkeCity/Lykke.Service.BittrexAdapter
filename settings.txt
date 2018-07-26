@@ -1,10 +1,28 @@
 {
-  "BittrexAdapterService": 
+  "BittrexAdapterService":
   {
     "Db":
     {
-      "LogsConnString": "${LogsConnString}:[AzureTableStorage]"
-    }
+      "LogsConnString": "${BittrexAdapterService-LogsConnString}:[AzureTableStorage]"
+    },
+    "OrderBooks": {
+                "OrderBooks": {
+                    "Durable": ${BittrexAdapterService-OrderBooks-OrderBooks-Durable},
+                    "Enabled": ${BittrexAdapterService-OrderBooks-OrderBooks-Enabled},
+                    "ConnectionString": "${RawPriceRabbitMq}:[RabbitMq]",
+                    "Exchanger": "lykke.exchangeconnector.orderBooks.bittrex"
+                },
+                "TickPrices": {
+                    "Durable": ${BittrexAdapterService-OrderBooks-TickPrices-Durable},
+                    "Enabled": ${BittrexAdapterService-OrderBooks-TickPrices-Enabled},
+                    "ConnectionString": "${RawPriceRabbitMq}:[RabbitMq]",
+                    "Exchanger": "lykke.exchangeconnector.tickPrices.bittrex"
+                },
+                "TimeoutBetweenQueries": "${BittrexAdapterService-OrderBooks-TimeoutBetweenQueries}",
+                "OrderBookDepth": ${BittrexAdapterService-OrderBooks-OrderBookDepth},
+                "MaxEventPerSecondByInstrument": ${BittrexAdapterService-OrderBooks-MaxEventPerSecondByInstrument},
+                "AllowedAnomalisticAssets": ${BittrexAdapterService-OrderBooks-AllowedAnomalisticAssets}:[JsonArray]
+            }
   },
   "MonitoringServiceClient": 
   {

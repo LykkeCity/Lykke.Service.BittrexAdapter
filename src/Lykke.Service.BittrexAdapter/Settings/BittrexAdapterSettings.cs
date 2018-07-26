@@ -1,4 +1,5 @@
 ﻿using JetBrains.Annotations;
+using Lykke.Service.BittrexAdapter.Services;
 using Lykke.SettingsReader.Attributes;
 
 namespace Lykke.Service.BittrexAdapter.Settings
@@ -7,5 +8,6 @@ namespace Lykke.Service.BittrexAdapter.Settings
     public class BittrexAdapterSettings
     {
         public DbSettings Db { get; set; }
+        public BittrexOrderBookPublishingSettings OrderBooks { get; set; }
     }
 }
