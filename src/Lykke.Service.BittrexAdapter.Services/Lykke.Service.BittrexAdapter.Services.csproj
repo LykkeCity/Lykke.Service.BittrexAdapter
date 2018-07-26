@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>Lykke.Service.BittrexAdapter.Services</AssemblyName>
+    <RootNamespace>Lykke.Service.BittrexAdapter.Services</RootNamespace>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Lykke.Common" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lykke.Service.BittrexAdapter.Core\Lykke.Service.BittrexAdapter.Core.csproj" />
+  </ItemGroup>
+</Project>
