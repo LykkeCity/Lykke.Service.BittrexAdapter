@@ -1,0 +1,42 @@
+BittrexAdapterService:
+  Db:
+    LogsConnString:
+      settings-key: BittrexAdapterService-LogsConnString
+      types: [ AzureTableStorage ]
+  OrderBooks:
+    OrderBooks:
+      Durable:
+        settings-key: BittrexAdapterService-OrderBooks-OrderBooks-Durable
+      Enabled:
+        settings-key: BittrexAdapterService-OrderBooks-OrderBooks-Enabled
+      ConnectionString:
+        settings-key: RawPriceRabbitMq
+        types: [ RabbitMq ]
+      Exchanger: lykke.exchangeconnector.orderBooks.bittrex
+    TickPrices:
+      Durable:
+        settings-key: BittrexAdapterService-OrderBooks-TickPrices-Durable
+      Enabled:
+        settings-key: BittrexAdapterService-OrderBooks-TickPrices-Enabled
+      ConnectionString:
+        settings-key: RawPriceRabbitMq
+        types: [ RabbitMq ]
+      Exchanger: lykke.exchangeconnector.tickPrices.bittrex
+    TimeoutBetweenQueries:
+      settings-key: BittrexAdapterService-OrderBooks-TimeoutBetweenQueries
+    OrderBookDepth:
+      settings-key: BittrexAdapterService-OrderBooks-OrderBookDepth
+    MaxEventPerSecondByInstrument:
+      settings-key: BittrexAdapterService-OrderBooks-MaxEventPerSecondByInstrument
+    AllowedAnomalisticAssets:
+      settings-key: BittrexAdapterService-OrderBooks-AllowedAnomalisticAssets
+      types: [ JsonArray ]
+MonitoringServiceClient:
+  MonitoringServiceUrl:
+    settings-key: MonitoringServiceUrl
+SlackNotifications:
+  AzureQueue:
+    ConnectionString:
+      settings-key: SlackNotificationsConnString
+      types: [ AzureTableStorage ]
+    QueueName: slack-notifications
